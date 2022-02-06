@@ -14,7 +14,70 @@
         </div>
     </header>
     <main>
+        <div id="wrapper">
+            <div id="outer">
+                <div class="itemwrapper">
+                    <h3>Nesta lista vai encontrar todos os carros disponiveis no mercado. </h3>
 
+                </div>
+                <div class="itemwrapper">
+                    <h3>Aqui pode adicionar novos carros que conheça e por esquecimento a CarStand não adicionou.</h3>
+                    <div class="container">
+                        <form action="/action_page.php">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="marca">Marca</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="marca" name="marca" placeholder="Marca do Carro">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="modelo">Modelo</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="modelo" name="modelo" placeholder="Modelo do Carro">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="nacionalidade">Nacionalidade</label>
+                                </div>
+                                <div class="col-75">
+                                    <select id="nacionalidade" name="nacionalidade">
+                                        <option value="italiana">Italiana</option>
+                                        <option value="alema">Alemã</option>
+                                        <option value="sueca">Sueca</option>
+                                        <option value="inglesa">Inglesa</option>
+                                        <option value="francesa">Francesa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="matricula">Matricula</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="matricula" name="matricula" placeholder="Matricula do Carro">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="ano">Ano</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="ano" name="ano" placeholder="Ano do Carro">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>

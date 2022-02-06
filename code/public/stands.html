@@ -2,7 +2,10 @@
 
 <head>
     <title>CarStand - Stands</title>
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/stand.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="./javascripts/stand.js"></script>
 </head>
 
 <body>
@@ -13,7 +16,25 @@
             <a href="./stands.html">Stands</a>
         </div>
     </header>
+    <main>
+        <div id="wrapper">
+            <div id="outer">
+                <div class="itemwrapper">
+                    <h3>Nesta lista vai encontrar todos os stands de carros em Portugal. </h3>
 
+                </div>
+                <div class="itemwrapper">
+                    <h3>Através deste mapa vai ter acesso à informação geográfica de todos os stands.</h3>
+                    <div id="map" style="width: 95%; height: 400px;"></div>
+                </div>
+                <script>mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsMW1vcmFpcyIsImEiOiJja3piZWswcmkwY2J2Mm9udDBocXFtNTZ6In0.aQaEqo-9OjYHo5Ynz9nbgA';
+                    const map = new mapboxgl.Map({
+                        container: 'map', // container ID
+                        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+                        center: [-9.13648, 38.70794], // starting position [lng, lat] Inserts are backwards inside batabase - lat, lng
+                        zoom: 13 // starting zoom
+                    });</script>
+    </main>
 
     <footer>
         <h5>Projecto desenvolvido por Miguel Morais (50034581) | E-mail: <a
