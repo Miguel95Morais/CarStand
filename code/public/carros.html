@@ -3,6 +3,7 @@
 <head>
     <title>CarStand - Carros</title>
     <link rel="stylesheet" href="./stylesheets/style.css">
+    <script src="./javascripts/carro.js"></script>
 </head>
 
 <body>
@@ -18,12 +19,12 @@
             <div id="outer">
                 <div class="itemwrapper">
                     <h3>Nesta lista vai encontrar todos os carros disponiveis no mercado. </h3>
-
+                    <table id="carros"></table>
                 </div>
                 <div class="itemwrapper">
                     <h3>Aqui pode adicionar novos carros que conheça e por esquecimento a CarStand não adicionou.</h3>
                     <div class="container">
-                        <form action="/action_page.php">
+                        <form action="carros.html">
                             <div class="row">
                                 <div class="col-25">
                                     <label for="marca">Marca</label>
@@ -45,13 +46,8 @@
                                     <label for="nacionalidade">Nacionalidade</label>
                                 </div>
                                 <div class="col-75">
-                                    <select id="nacionalidade" name="nacionalidade">
-                                        <option value="italiana">Italiana</option>
-                                        <option value="alema">Alemã</option>
-                                        <option value="sueca">Sueca</option>
-                                        <option value="inglesa">Inglesa</option>
-                                        <option value="francesa">Francesa</option>
-                                    </select>
+                                    <input type="text" id="nacionalidade" name="nacionalidade"
+                                        placeholder="Nacionalidade do Carro">
                                 </div>
                             </div>
                             <div class="row">
@@ -71,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <input type="submit" value="Submit">
+                                <input type="submit" value="Submit" onclick="addCarro()">
                             </div>
                         </form>
                     </div>
