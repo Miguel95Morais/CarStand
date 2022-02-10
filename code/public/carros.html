@@ -3,6 +3,7 @@
 <head>
     <title>CarStand - Carros</title>
     <link rel="stylesheet" href="./stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./javascripts/carro.js"></script>
 </head>
 
@@ -19,12 +20,19 @@
             <div id="outer">
                 <div class="itemwrapper">
                     <h3>Nesta lista vai encontrar todos os carros disponiveis no mercado. </h3>
+                    Marca: <input type="text" id="marca">
+                    Modelo: <input type="text" id="modelo">
+                    Nacionalidade: <input type="text" id="nacionalidade">
+                    Matricula: <input type="text" id="matricula">
+                    Ano: <input type="text" id="ano">
+                    <input type="button" value="Filtrar" onclick="filtrar()">
                     <table id="carros"></table>
                 </div>
                 <div class="itemwrapper">
                     <h3>Aqui pode adicionar novos carros que conheça e por esquecimento a CarStand não adicionou.</h3>
                     <div class="container">
-                        <form action="carros.html">
+                        <!--<form action="carros.html">-->
+                        <form action="api/carros" method="post">
                             <div class="row">
                                 <div class="col-25">
                                     <label for="marca">Marca</label>
