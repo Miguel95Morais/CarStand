@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./stylesheets/stand.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./javascripts/stand.js"></script>
 </head>
 
@@ -20,8 +21,38 @@
         <div id="wrapper">
             <div id="outer">
                 <div class="itemwrapper">
-                    <h3>Nesta lista vai encontrar todos os stands de carros em Portugal. </h3>
-
+                    <h3>Através deste formulário vai conseguir adicionar novos stands. Esses stands irão aparecer no
+                        mapa ao lado</h3>
+                    <form action="api/stands" method="post">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="nome">Nome</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="nome" name="nome" placeholder="Nome do Stand">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="morada">Morada</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="morada" name="morada" placeholder="Morada do Stand">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="localizacao">Localização</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="localizacao" name="localizacao"
+                                    placeholder="Localizacao do Stand">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Submit" onclick="addStand()">
+                        </div>
+                    </form>
                 </div>
                 <div class="itemwrapper">
                     <h3>Através deste mapa vai ter acesso à informação geográfica de todos os stands.</h3>
@@ -30,10 +61,34 @@
                 <script>mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsMW1vcmFpcyIsImEiOiJja3piZWswcmkwY2J2Mm9udDBocXFtNTZ6In0.aQaEqo-9OjYHo5Ynz9nbgA';
                     const map = new mapboxgl.Map({
                         container: 'map', // container ID
-                        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+                        style: 'mapbox://styles/miguel1morais/ckzhpk1i700el15pcj2s9maev', // style URL
                         center: [-9.13648, 38.70794], // starting position [lng, lat] Inserts are backwards inside batabase - lat, lng
-                        zoom: 13 // starting zoom
-                    });</script>
+                        zoom: 9 // starting zoom
+                    });
+                    map.on('click', (event) => {
+                        // If the user clicked on one of your markers, get its information.
+                        const features = map.queryRenderedFeatures(event.point, {
+                            layers: ['standspt'] // replace with your layer name
+                        });
+                        if (!features.length) {
+                            return;
+                        }
+                        const feature = features[0];
+
+                        // Code from the next step will go here.
+
+                        /* 
+                            Create a popup, specify its options 
+                            and properties, and add it to the map.
+                          */
+                        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+                            .setLngLat(feature.geometry.coordinates)
+                            .setHTML(
+                                `<h3>${feature.properties.nome}</h3><p>${feature.properties.morada}</p>`
+                            )
+                            .addTo(map);
+                    });
+                </script>
     </main>
 
     <footer>

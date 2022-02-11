@@ -1,0 +1,61 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Ferrari",
+        "morada": "'Rua Artilharia 1 105A, 1070-012 Lisboa"
+      },
+      "geometry": {
+        "coordinates": [
+          -9.15777,
+          38.72600
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "BMW Caetano Baviera Lisboa",
+        "morada": "Rua Coronel Bento Roma 18A, 1700-146 Lisboa"
+      },
+      "geometry": {
+        "coordinates": [
+          -9.13595,
+          38.74899
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Santogal Volvo",
+        "morada": "Rua António Patricio 11 EF, 1700-047 Lisboa"
+      },
+      "geometry": {
+        "coordinates": [
+          -9.14522,
+          38.75310
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Aston Martin Lisboa",
+        "morada": "Estrada da Ribeira, Armazém 3C, 2645-575 Alcabideche"
+      },
+      "geometry": {
+        "coordinates": [
+          -9.41478,
+          38.72501
+        ],
+        "type": "Point"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}

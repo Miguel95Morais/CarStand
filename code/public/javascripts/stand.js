@@ -1,7 +1,27 @@
-/*mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsMW1vcmFpcyIsImEiOiJja3piZWswcmkwY2J2Mm9udDBocXFtNTZ6In0.aQaEqo-9OjYHo5Ynz9nbgA';
-const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-    center: [-8.628, 37.233], // starting position [lng, lat] Inserts are backwards inside batabase - lat, lng
-    zoom: 9 // starting zoom
+/*
+Add an event listener that runs
+  when a user clicks on the map element.
+*/
+/*map.on('click', (event) => {
+    // If the user clicked on one of your markers, get its information.
+    const features = map.queryRenderedFeatures(event.point, {
+        layers: ['standspt'] // replace with your layer name
+    });
+    if (!features.length) {
+        return;
+    }
+    const feature = features[0];*/
+
+    // Code from the next step will go here.
+
+/*
+    Create a popup, specify its options 
+    and properties, and add it to the map.
+  */
+/*const popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML(
+        `<h3>${feature.properties.nome}</h3><p>${feature.properties.morada}</p>`
+    )
+    .addTo(map);
 });*/
